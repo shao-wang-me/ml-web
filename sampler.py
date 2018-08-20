@@ -1,11 +1,11 @@
 import tweepy
 import sys
-import sqlite3
+import preprocessor
 
 
 class Listener(tweepy.StreamListener):
+
     def on_data(self, data):
-        print(data)
         return True
 
     def on_error(self, status):
@@ -24,7 +24,4 @@ if __name__ == '__main__':
     streamListener = Listener()
     stream = tweepy.Stream(auth=auth, listener=streamListener)
 
-    conn = sqlite3.connect('twitter.db')
-    c = conn.cursor()
-    stream.sample()
-    # stream.filter()
+    stream.filter()
