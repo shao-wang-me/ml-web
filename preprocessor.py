@@ -5,7 +5,7 @@ from sqlalchemy import create_engine
 from web_utils import clean_tweet
 
 
-def preprocess(tweet, args):
+def preprocess(tweet):
     # create the preprocessed pandas dataframe for tweets
     preprocessed_dict = {'tweet': [clean_tweet(tweet[0])], 'date': [tweet[1]]}
     preprocessed_df = pd.DataFrame(preprocessed_dict)
