@@ -1,6 +1,5 @@
 import tweepy
 import sys
-import preprocessor
 
 
 class Listener(tweepy.StreamListener):
